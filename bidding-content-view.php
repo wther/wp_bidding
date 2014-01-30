@@ -13,7 +13,7 @@ function renderContent($content){
 	
 	$max_length = 0;
 	foreach($content as $key => $convention) {
-		$max_length = max($convention['length'], $max_length);
+		$max_length = max(count($convention['bidding']), $max_length);
 	}
 	
 	$extensions = array();
@@ -28,8 +28,6 @@ function renderContent($content){
 			$extensions[] = array('content' => $convention['content'], 'category' => $convention['class']);
 			continue;
 		}
-		
-		print_r($bids);
 		
 		$i = 0; $skip = 0;
 		for($i = 0; $i < count($bids); $i++) {
@@ -50,11 +48,11 @@ function renderContent($content){
 			}
 		
 			$last = ($i == (count($bids)-1)) ? 'last' : 'not_last';
-			$html .= "<td class='bid_cell cell_$i $last' rowspan='$rs' valign='center'>".replace_suits_with_spans($bids[$i], true).'</td>';
+			$html .= "<td class='bid_cell cell_$i $last' rowspan='$rs' valign='center'>".replace_suits_with_spans2($bids[$i], true).'</td>';
 		}
 		
 		$colspan = (1 + $max_length - $i + $skip);
-		$convention['content'] = replace_suits_with_spans($convention['content']);
+		$convention['content'] = replace_suits_with_spans2($convention['content']);
 		$html .= "<td class='convention_explain' colspan='$colspan'>$convention[content]</td>";
 		$html .= "</tr>\n";
 	}
@@ -68,7 +66,7 @@ function renderContent($content){
 	return $html;
 }
 
-function replace_suits_with_spans( $content, $all = false ){
+function replace_suits_with_spans2( $content, $all = false ){
 	$replacements = array(
 		'!S' => '&spades;',
 		'!H' => '<span style="color:red;">&hearts;</span>',
@@ -92,5 +90,3 @@ function replace_suits_with_spans( $content, $all = false ){
 	return $content;
 	
 }
-
-?>

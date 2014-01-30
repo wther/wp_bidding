@@ -77,7 +77,7 @@ class Bidding {
 							throw new BiddingFormatException("No separating : found in:  $line");
 						}
 						
-						$sequence = strpos($fields[0], '@') !== false ? explode("@", $fields[0]) : $fields[0];
+						$sequence = strpos($fields[0], '@') !== false ? explode("@", $fields[0]) : array($fields[0]);
 						
 						$class = count($sequence) > 1 ? $sequance[1] : "normal";
 						$items = explode("-",$sequence[0]);
@@ -227,5 +227,3 @@ class Bidding {
 			return $this->content;
 		}
 }
-
-?>

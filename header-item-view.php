@@ -16,9 +16,9 @@ function renderHeaderItem($item, &$alerts){
 	}
 ?>
 <?php if(isset($item['alert'])){?>
-	<span class="bidding-alert-header" title="<?php print $item['alert']; ?>"><?php print $item['bid']; ?></span>
+	<span class="bidding-alert-header" title="<?php print $item['alert']; ?>"><?php print replace_suits_with_spans2($item['bid'],true); ?></span>
 <?php } else { ?>
-	<?php print $item['bid']; ?><?php }?>
+	<?php print replace_suits_with_spans2($item['bid'],true); ?><?php }?>
 <?php 
 
 }
