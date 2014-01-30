@@ -80,7 +80,7 @@ class Bidding {
 						$sequence = strpos($fields[0], '@') !== false ? explode("@", $fields[0]) : $fields[0];
 						
 						$class = count($sequence) > 1 ? $sequance[1] : "normal";
-						$items = explode("-",$sequence);
+						$items = explode("-",$sequence[0]);
 						if(count($items) < 1){
 							throw new BiddingFormatException("No bidding sequence found for: $line");
 						}

@@ -29,11 +29,13 @@ function renderContent($content){
 			continue;
 		}
 		
+		print_r($bids);
+		
 		$i = 0; $skip = 0;
 		for($i = 0; $i < count($bids); $i++) {
 			$all = true;
 			for($j = 0; $j <= $i; $j++){
-				$all = $all && ($k > 0 && isset($content[$k-1]['bids'][$j]) && $content[$k-1]['bids'][$j] == $bids[$j]) ;
+				$all = $all && ($k > 0 && isset($content[$k-1]['bidding'][$j]) && $content[$k-1]['bidding'][$j] == $bids[$j]) ;
 			}
 			if($all){
 				++$skip;
@@ -42,7 +44,7 @@ function renderContent($content){
 			$rs = 1;
 			for($j = $k+1; $j < count($content); $j++){
 				$ok = true ;
-				for($l = 0; $l <= $i; $l++) $ok = $ok && (isset($content[$j]['bids'][$l]) && $content[$j]['bids'][$l] == $bids[$l]);
+				for($l = 0; $l <= $i; $l++) $ok = $ok && (isset($content[$j]['bidding'][$l]) && $content[$j]['bidding'][$l] == $bids[$l]);
 				if($ok) ++$rs ;
 				else break ;
 			}
