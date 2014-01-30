@@ -1,0 +1,101 @@
+
+div.situation {
+	margin: 10px;
+}
+
+div.situation_title {
+	padding-top: 30px;
+	text-align: right;
+	font-style: italic;
+	font-size: 16px;
+}
+
+div.situation_title a, div.situation_title a:hover, div.situation_title a:visited  {
+	color: black;
+	text-decoration: none;
+	cursor: default;
+}
+
+table.bidding-header {
+	margin-bottom: 20px;
+}
+
+table.bidding-header td {
+	width: 30px;
+	border: 1px solid #ddd;
+	padding: 3px 5px;
+	background-color: rgb(249, 249, 249);
+}
+
+table.situations_table {
+	border: 1px solid #ddd;
+	width: 100%;
+}
+
+table.situations_table tr.normal td { background-color: transparent ; }
+table.situations_table tr.important td.last, table.situations_table tr.important td.convention_explain { background-color: #C0B290 ; }
+table.situations_table tr.critical td.last, table.situations_table tr.critical td.convention_explain { background-color: #b4a0e0 ; }
+table.situations_table tr.wrong td.last, table.situations_table tr.wrong td.convention_explain { background-color: #FF0000 ; color: white; }
+table.situations_table tr.modified td.last, table.situations_table tr.wrong td.convention_explain { background-color: #f2b5c8 ; color: white; }
+
+table.situations_table td {
+	padding: 3px;
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+	vertical-align: middle;
+	text-align: left;
+}
+
+table.situations_table td.bid_cell, table.bidding-header td {
+	width: 30px;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+
+div.extension_normal {
+	margin: 10px;
+	padding: 5px;
+	background-color: #DCE2D0;
+	border: 4px solid #DCE2D0;
+	border-radius: 10px;
+}
+
+div.extension_important {
+	margin: 10px;
+	padding: 5px;
+	background-color: #C0B290;
+	border: 4px solid #C0B290;
+	border-radius: 10px;
+}
+
+div.extension_critical {
+	background-color: #b4a0e0 ; 
+	margin: 10px;
+	padding: 5px;
+	border: 4px solid #b4a0e0;
+	border-radius: 10px;
+}
+div.extension_modified {
+	background-color: #f2b5c8 ; 
+	margin: 10px;
+	padding: 5px;
+	border: 4px solid #f2b5c8;
+	border-radius: 10px;
+}
+
+ul.chapters li {
+	list-style-type: circle;
+	padding-top: 5px;
+}
+
+div.search_box {
+	background-color: #DCE2D0;
+	margin: 20px;
+	font-weight: bold;
+	border: 4px solid #DCE2D0;
+	border-radius: 10px;
+	text-align: center;
+}
+
+
