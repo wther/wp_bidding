@@ -37,7 +37,7 @@ $default = "
 	<?php
 
 	require_once('Bidding.class.php');
-	require_once('BiddingView.php');
+	require_once('bidding-view.php');
 
 
 	if(isset($_POST['bidding'])){

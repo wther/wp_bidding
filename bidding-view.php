@@ -7,6 +7,9 @@
  * @date 2014-01-30
  * @license GPL
  */
+
+require_once('header-item-view.php');
+require_once('bidding-content-view.php');
  
 function renderView($bidding){
 	$alerts = array();
@@ -32,3 +35,5 @@ function renderView($bidding){
 <?php } ?>
 
 </div>
+
+<?php } ?>
