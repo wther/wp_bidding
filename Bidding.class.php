@@ -59,7 +59,7 @@ class Bidding {
 					if($filling_header){
 						$filling_header = false;
 					} else {
-						break;
+						continue;
 					}
 					
 				// Line is not empty
@@ -77,9 +77,10 @@ class Bidding {
 							throw new BiddingFormatException("No separating : found in:  $line");
 						}
 						
-						$sequence = strpos($fields[0], '@') !== false ? explode("@", $fields[0]) : array($fields[0]);
+						$sequence = strpos($fields[0], '@') !== false ? explode("@", $fields[0],2) : array($fields[0]);
+
 						
-						$class = count($sequence) > 1 ? $sequance[1] : "normal";
+						$class = count($sequence) > 1 ? $sequence[1] : "normal";
 						$items = explode("-",$sequence[0]);
 						if(count($items) < 1){
 							throw new BiddingFormatException("No bidding sequence found for: $line");
@@ -151,6 +152,7 @@ class Bidding {
 				return true;
 			}
 			
+			$bid = trim($bid);
 			$allowed_short = array('X', 'XX', 'P', '?');
 			if(in_array($bid, $allowed_short)){
 				return true;
@@ -161,7 +163,7 @@ class Bidding {
 			}
 			
 			if(strpos('1234567', $bid[0]) === false){
-				$error_msg = "Bids have to start with a numeric value from the 1-7 interval, $bid[0] isn't.";
+				$error_msg = "Bids have to start with a numeric value from the 1-7 interval, $bid[0] isn't in " . $bid;
 				return false;
 			}
 			

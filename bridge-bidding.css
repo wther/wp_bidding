@@ -34,8 +34,8 @@ table.situations_table {
 }
 
 table.situations_table tr.normal td { background-color: transparent ; }
-table.situations_table tr.important td.last, table.situations_table tr.important td.convention_explain { background-color: #C0B290 ; }
-table.situations_table tr.critical td.last, table.situations_table tr.critical td.convention_explain { background-color: #b4a0e0 ; }
+table.situations_table tr.important td.last, table.situations_table tr.important td.convention_explain { background-color: #E0E2C0 ; }
+table.situations_table tr.critical td.last, table.situations_table tr.critical td.convention_explain { background-color: #e4c0f0 ; }
 table.situations_table tr.wrong td.last, table.situations_table tr.wrong td.convention_explain { background-color: #FF0000 ; color: white; }
 table.situations_table tr.modified td.last, table.situations_table tr.wrong td.convention_explain { background-color: #f2b5c8 ; color: white; }
 
